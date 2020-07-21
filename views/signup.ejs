@@ -1,0 +1,223 @@
+<link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+<!-- Font special for pages-->
+<link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+<!-- Vendor CSS-->
+<link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+<!-- Main CSS-->
+<link href="css/regform.css" rel="stylesheet" media="all">
+
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Registration Form</h2>
+                <%- include('./partials/errorMessage.ejs') %>
+                <h5 class="mandatory">* feilds are required</h5>
+                <form method="POST" action="/register">
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">first name <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="text" name="firstName" required>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">last name (surname) <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="text" name="surName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Middle name</label>
+                                <input class="input--style-4" type="text" name="middleName">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Date of birth <span class="mandatory">*</span></label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4 js-datepicker"type="text" name="dob" required>
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label"></label>Password <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="password" name="passWord" required>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Confirm password <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="password" name="confirmPassword" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Gender <span class="mandatory">*</span></label>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Male
+                                        <input type="radio" checked="checked" name="gender" value="male" >
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Female
+                                        <input type="radio" name="gender" value="female" >
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Phone Number <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="tel" name="phoneNumber" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">Email <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">residential address <span class="mandatory">*</span></label>
+                                <input class="input--style-4" type="text" name="address" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">LGA <span class="mandatory">*</span></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="lga" required>
+                                <option>Choose option</option>
+                                <option>Aliero</option>
+                                <option>Arewa</option>
+                                <option>Augie</option>
+                                <option>Argungu</option>
+                                <option>Bagudo</option>
+                                <option>Birnin Kebbi</option>
+                                <option>Bunza</option>
+                                <option>Dandi</option>
+                                <option>Danko Wasagu</option>
+                                <option>Fakai</option>
+                                <option>Gwandu</option>
+                                <option>Jega</option>
+                                <option>Kalgo</option>
+                                <option>Koko Besse</option>
+                                <option>Maiyama</option>
+                                <option>Ngaski</option>
+                                <option>Sakaba</option>
+                                <option>Shanga</option>
+                                <option>Suru</option>
+                                <option>Yauri</option>
+                                <option>Zuru</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Highest educational qualification <span class="mandatory">*</span></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="qualification" required>
+                                <option>Choose option</option>
+                                <option>Bsc</option>
+                                <option>B.Eng</option>
+                                <option>B.Tech</option>
+                                <option>OND</option>
+                                <option>ND</option>
+                                <option>HND</option>
+                                <option>NCE</option>
+                                <option>SSCE</option>
+                                <option>FLSC</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">If your answer is other above,specify highest qualification</label>
+                                <input class="input--style-4" type="text" name="otherQualification">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">Certification obtained</label>
+                                <input class="input--style-4" type="text" name="certificate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">NYSC call-up number</label>
+                                <input class="input--style-4" type="text" name="nyscNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div>
+                            <div class="input-group">
+                                <label class="label">If you have applied for any social investment programme,kindly list
+                                    them seperated by comma (e.g. N-POWER,NALDA e.t.c)</label>
+                                <input class="input--style-4" type="text" name="socialProgramme">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div>
+                            <div class="input-group">
+                                <label class="label">enter unique ID for the programme(s) as listed above seperated by
+                                    comma (e.g 1,2,3)</label>
+                                <input class="input--style-4" type="text" name="programmeId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-3">
+                            <div class="input-group">
+                                <label class="label">Do you have any other skill(s)?</label>
+                                <input class="input--style-4" type="text" name="skills">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-t-15">
+                        <button class="btn btn--radius-2 btn--blue" type="submit">REGISTER</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery JS-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/datepicker/moment.min.js"></script>
+<script src="vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main JS-->
+<script src="js/global.js"></script>
